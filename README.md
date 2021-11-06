@@ -50,30 +50,57 @@ And below is an example of single song file, TRAABJL12903CDCF1A.json.
    "year":0
 }
 
-Log Dataset
+* Log Dataset
 
 The second dataset consists of log files in JSON format. The log files in the dataset with are partitioned by year and month. For example:
 
 log_data/2018/11/2018-11-12-events.json log_data/2018/11/2018-11-13-events.json
 
-And below is an example of what a single log file, 2018-11-13-events.json, looks like.
+And below is an example of single log file, 2018-11-13-events.json
 
-{"artist":"Pavement", "auth":"Logged In", "firstName":"Sylvie", "gender", "F", "itemInSession":0, "lastName":"Cruz", "length":99.16036, "level":"free", "location":"Klamath Falls, OR", "method":"PUT", "page":"NextSong", "registration":"1.541078e+12", "sessionId":345, "song":"Mercy:The Laundromat", "status":200, "ts":1541990258796, "userAgent":"Mozilla/5.0(Macintosh; Intel Mac OS X 10_9_4...)", "userId":10}
+{
+   "artist":"Pavement",
+   "auth":"Logged In",
+   "firstName":"Sylvie",
+   "gender":"F",
+   "itemInSession":0,
+   "lastName":"Cruz",
+   "length":99.16036,
+   "level":"free",
+   "location":"Klamath Falls, OR",
+   "method":"PUT",
+   "page":"NextSong",
+   "registration":"1.541078e+12",
+   "sessionId":345,
+   "song":"Mercy:The Laundromat",
+   "status":200,
+   "ts":1541990258796,
+   "userAgent":"Mozilla/5.0(Macintosh; Intel Mac OS X 10_9_4...)",
+   "userId":10
+}
 
-Schema for Song Play Analysis
+### Schema for Song Play Analysis
 
 A Star Schema would be required for optimized queries on song play queries
 
-Fact Table
+* Fact Table
 
-songplays - records in event data associated with song plays i.e. records with page NextSong songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
+|Table |Description|
+--------------------
 
-Dimension Tables
+| songplays | records in event data associated with song plays i.e. records with page NextSong songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent|
 
-users - users in the app user_id, first_name, last_name, gender, level
+* Dimension Tables
 
-songs - songs in music database song_id, title, artist_id, year, duration
+|Table |Description|
+--------------------
 
-artists - artists in music database artist_id, name, location, lattitude, longitude
+| users | users in the app user_id, first_name, last_name, gender, level|
+-------------------------------------------------------------------------
 
-time - timestamps of records in songplays broken down into specific units start_time, hour, day, week, month, year, weekday
+|songs | songs in music database song_id, title, artist_id, year, duration|
+---------------------------------------------------------------------------
+|artists | artists in music database artist_id, name, location, lattitude, longitude|
+-------------------------------------------------------------------------------------
+|time | timestamps of records in songplays broken down into specific units start_time, hour, day, week, month, year, weekday|
+-----------------------------------------------------------------------------------------------------------------------------
