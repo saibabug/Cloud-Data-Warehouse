@@ -143,11 +143,11 @@ query2
 Statistics on when songs are played during a day
 Query:
   SELECT CASE
-           WHEN t.hour BETWEEN 2 AND 8  THEN '2~8'
-           WHEN t.hour BETWEEN 9 AND 12 THEN '9~12'
-           WHEN t.hour BETWEEN 13 AND 18 THEN '13~18'
-           WHEN t.hour BETWEEN 19 AND 22 THEN '19~22'
-           ELSE '23~24, 0~2'
+           WHEN t.hour BETWEEN 2 AND 8  THEN '2-8'
+           WHEN t.hour BETWEEN 9 AND 12 THEN '9-12'
+           WHEN t.hour BETWEEN 13 AND 18 THEN '13-18'
+           WHEN t.hour BETWEEN 19 AND 22 THEN '19-22'
+           ELSE '23-24, 0-2'
          END AS play_time, 
          count(*) AS cnt
     FROM songplays sp
@@ -157,5 +157,3 @@ GROUP BY 1
 ORDER BY 2 DESC;
 
 Result: query3 We can tell from the above result that most users play songs in the afternoon between 13:00 and 18:00 and very few users play songs in (late)mid-night.
-
-
