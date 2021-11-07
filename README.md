@@ -83,7 +83,8 @@ And below is an example of single log file, 2018-11-13-events.json
 
 A Star Schema would be required for optimized queries on song play queries
 
-![C:\Users\garimelv\Downloads\CDWH/png]
+![CDWH](https://user-images.githubusercontent.com/10192352/140660758-88647be7-9fba-4c95-ad84-41d3f4c27e10.png)
+
 
 * Fact Table
 
