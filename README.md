@@ -83,6 +83,8 @@ And below is an example of single log file, 2018-11-13-events.json
 
 A Star Schema would be required for optimized queries on song play queries
 
+![C:\Users\garimelv\Downloads\CDWH/png]
+
 * Fact Table
 
 | Table | Description |
@@ -160,6 +162,6 @@ Query:
 GROUP BY 1
 ORDER BY 2 DESC;
 
-Result: query3 We can tell from the above result that most users play songs in the afternoon between 13:00 and 18:00 and very few users play songs in (late)mid-night.
+Result:
 
 
