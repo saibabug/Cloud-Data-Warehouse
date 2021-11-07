@@ -127,8 +127,11 @@ GROUP BY 1, 2
 ORDER BY 3 DESC
    LIMIT 10;
 Result: query1
-Top-10 most played artists.
+
+* Top-10 popular artists
+
 Query:
+
   SELECT sp.artist_id, a.name AS artist_name, count(*) AS cnt
     FROM songplays sp
     JOIN artists a
@@ -139,9 +142,10 @@ ORDER BY 3 DESC
    
 Result: 
 
-query2
-Statistics on when songs are played during a day
+* When most people are listening to songs?
+
 Query:
+
   SELECT CASE
            WHEN t.hour BETWEEN 2 AND 8  THEN '2-8'
            WHEN t.hour BETWEEN 9 AND 12 THEN '9-12'
@@ -157,3 +161,5 @@ GROUP BY 1
 ORDER BY 2 DESC;
 
 Result: query3 We can tell from the above result that most users play songs in the afternoon between 13:00 and 18:00 and very few users play songs in (late)mid-night.
+
+
