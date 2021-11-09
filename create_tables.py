@@ -4,7 +4,7 @@ from sql_queries import create_table_queries, drop_table_queries
 
 
 def drop_tables(cur, conn):
-     """drops pre existing tables
+    """drops pre existing tables
     Args:
         cur (cursor): cursor to execute queries
         conn: open connection 
@@ -19,11 +19,12 @@ def drop_tables(cur, conn):
 
 
 def create_tables(cur, conn):
-     """creates all required tables specified in sql_queries
+    """creates all required tables specified in sql_queries
     Args:
         cur (cursor): cursor to execute queries
         conn: open connection 
     """
+    
     try:
         print("creating all tables")
         for query in create_table_queries:
@@ -34,7 +35,6 @@ def create_tables(cur, conn):
 
 
 def create_dbObjects(cur, conn):
-    
     drop_tables(cur, conn)
     create_tables(cur, conn)
 

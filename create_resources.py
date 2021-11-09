@@ -3,6 +3,7 @@ import pandas as pd
 import boto3
 import json
 
+
 def get_config(filename):
     """returns configuration object which can be used for creating AWS resources
     
@@ -18,6 +19,7 @@ def get_config(filename):
         print(e)
 
     return config
+
 
 def update_config_file(config_file, section, key, value):
     """Writes to an existing config file
@@ -41,6 +43,7 @@ def update_config_file(config_file, section, key, value):
     except ClientError as e:
         print(f'ERROR: {e}')
         
+
 def create_iam_role(iam, config):
     """
     Create an IAM role to allow Redshift to access S3.
@@ -160,7 +163,8 @@ def create_ec2_sg(ec2, config, cluster_props):
         print(e)
 
     return defaultSg
-    
+
+
 def create_resources():
     config = get_config('dwh.cfg')
     # create resources/clients

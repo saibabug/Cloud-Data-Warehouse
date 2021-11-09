@@ -4,15 +4,16 @@ import json
 from create_resources import get_config
 
 def shutdown_resources():
-     """shutdowns resources created
+    """shutdowns resources created
     Args:
         cur (cursor): cursor to execute queries
         conn: open connection 
     """
 
+    
     # parse config file
     config = get_config('dwh.cfg')
-
+    
     # create resources/clients
     iam = boto3.client('iam', region_name=config['REDSHIFT']['REGION_NAME'],aws_access_key_id=config['AWS']['key'], aws_secret_access_key=config['AWS']['secret'])
     redshift = boto3.client('redshift', region_name=config['REDSHIFT']['REGION_NAME'],aws_access_key_id=config['AWS']['key'], aws_secret_access_key=config['AWS']['secret'])

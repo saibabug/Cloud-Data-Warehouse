@@ -25,11 +25,12 @@ def load_staging_tables(cur, conn):
 
 
 def insert_tables(cur, conn):
-     """Loads data into dimension tables
+    """Loads data into dimension tables
     Args:
         cur (cursor): cursor to execute queries
         conn: open connection 
     """
+    
     try:
         print("inserting data into dimension tables started\n")
         for query in insert_table_queries:
@@ -39,7 +40,6 @@ def insert_tables(cur, conn):
         print("inserting data into dimension tables completed\n")
     except Exception as e:
         print(e)
-
 
 
 def main(): 
