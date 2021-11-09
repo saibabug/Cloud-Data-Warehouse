@@ -83,8 +83,7 @@ And below is an example of single log file, 2018-11-13-events.json
 
 A Star Schema would be required for optimized queries on song play queries
 
-![CDWH](https://user-images.githubusercontent.com/10192352/140660758-88647be7-9fba-4c95-ad84-41d3f4c27e10.png)
-
+![C:\Users\garimelv\Downloads\CDWH/png]
 
 * Fact Table
 
@@ -106,11 +105,17 @@ A Star Schema would be required for optimized queries on song play queries
 
 ### Project inlcudes:
 
+create_resources.py - create IAM role,security group, redshift cluster
+
 create_table.py - Creates the fact, dimension and staging tables schemas, staging, fact and dimension tables for the star schema on Redshift.
 
 etl.py - Script loads data from S3 into staging tables on Redshift and then process that data into data warehouse tables(dimension and Fact) on Redshift.
 
 sql_queries.py - Script has Sql queries to define tables, insert data , which will be imported into the two other files above.
+
+validation.py - script to validate data in data warehouse and present some analysis on data
+
+shutdown_resources.py - script to shutdown resources post validation
 
 README.md - Describes process and decisions for this ETL pipeline
 
