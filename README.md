@@ -120,6 +120,11 @@ shutdown_resources.py - script to shutdown resources post validation
 
 README.md - Describes process and decisions for this ETL pipeline
 
+### Execution steps
+1. Update dwh.cfg file with valid AWS credentials
+2. Execute code by typing command -->  python3 etl.py (Code is end to end automated to ensure minimum manual intervention)
+3.  For example, if you want to execute only table creation script, then comment as below screenshot
+![image](https://user-images.githubusercontent.com/10192352/140856067-765c610e-1122-4280-a89e-c5cca94333bc.png)
 
 ### Sample Data Analysis
 
